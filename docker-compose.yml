@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  go:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    working_dir: /app/src/sprinkle
+    environment:
+      - GOPATH=/app
+    volumes:
+      - .:/app/src/sprinkle
